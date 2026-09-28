@@ -1,0 +1,1219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collins Atuta | Portfolio</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #101c2b;
+    --teal: #18b6a3;
+    --white: #ffffff;
+    --light: #f5f8fa;
+    --gray: #647386;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--navy);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 90px 8%;
+    scroll-margin-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    color: var(--teal);
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+
+/* ================= NAVIGATION ================= */
+
+header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--teal);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--teal);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.btn {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--navy);
+    padding: 12px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    border: 2px solid var(--teal);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--teal);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: var(--teal);
+    color: var(--navy);
+}
+
+
+/* ================= HOME ================= */
+
+#home {
+    min-height: 90vh;
+    background:
+        radial-gradient(circle at 80% 20%, #194c57, transparent 35%),
+        linear-gradient(120deg, #101c2b, #1b3447);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: var(--teal);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero-content h1 span {
+    color: var(--teal);
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    color: #d5e3ec;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #c1cbd5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 6px solid var(--teal);
+    overflow: hidden;
+    background: #dce9e9;
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #dce9e9;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 17px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e5eaed;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+
+/* ================= SKILLS ================= */
+
+.progress {
+    height: 9px;
+    background: #e5e9ed;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 8px 0 20px;
+}
+
+.progress div {
+    height: 100%;
+    background: var(--teal);
+    border-radius: 20px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ================= EDUCATION & EXPERIENCE ================= */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    border-left: 3px solid var(--teal);
+    padding-left: 35px;
+}
+
+.timeline-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -46px;
+    top: 25px;
+    width: 18px;
+    height: 18px;
+    background: var(--teal);
+    border: 4px solid var(--light);
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    color: #168c80;
+    margin: 10px 0;
+}
+
+.timeline-item p,
+.timeline-item li {
+    color: var(--gray);
+}
+
+.year {
+    display: inline-block;
+    background: #e5f7f4;
+    color: #147d72;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.project-image {
+    height: 150px;
+    background: linear-gradient(135deg, var(--navy), #168c80);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tags span {
+    background: #e5f7f4;
+    color: #147d72;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.project-links {
+    color: #147d72;
+    font-weight: bold;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 1px solid var(--teal);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--teal);
+    color: white;
+}
+
+.project-card.hide {
+    display: none;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #dce3e7;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.socials {
+    margin: 15px 0;
+}
+
+.socials a {
+    color: var(--teal);
+    margin: 0 10px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media(max-width: 700px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 25px 7%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 65px 7%;
+    }
+
+    .hero-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        max-width: 320px;
+        width: 100%;
+        margin: auto;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+<nav class="navbar">
+
+    <div class="logo">COLLINS<span>.</span></div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="hero-content reveal">
+
+        <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hello, I'm <span>Collins Atuta</span></h1>
+
+        <h2>Computer Scientist | Aspiring Full-Stack Developer</h2>
+
+        <p>
+            Passionate about technology, programming, networking,
+            and creating innovative digital solutions.
+            I believe in continuous learning and turning ideas into reality.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+    </div>
+
+    <div class="hero-image reveal">
+        <!-- Replace profile.jpg with your actual photo -->
+        <img src="images/profile.jpg" alt="Collins Atuta">
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+        <h2>About <span>Me</span></h2>
+        <p>Discover my background, interests and ambitions.</p>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-image reveal"
+            style="width: 180px; height: 220px; margin: auto;display: flex;align-items: center;object-fit: cover; border-radius: 12px;">
+            <img src="images/collins.jpg" alt="Collins Atuta"
+            style="width: 200px; height: 250px; object-fit: contain; display: block;margin: auto;border-radius: 12px;">
+        </div>
+
+        <div class="about-photo">
+         
+            <h3>Who Am I?</h3>
+
+            <p>
+                My name is Collins Atuta, a computer science student
+                passionate about technology, innovation and problem solving.
+            </p>
+
+            <p>
+                I have a strong interest in software development,
+                computer networking, database management and
+                modern web technologies.
+            </p>
+
+            <p>
+                I enjoy learning programming languages, developing
+                practical projects and exploring new technologies.
+            </p>
+
+            <p>
+                My goal is to become a professional software engineer
+                capable of building reliable, efficient and user-friendly
+                applications.
+            </p>
+
+            <a href="#contact" class="btn">Let's Connect</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-title reveal">
+        <h2>My <span>Skills</span></h2>
+        <p>Technical knowledge and abilities I am developing.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card reveal">
+            <h3>Frontend Development</h3>
+
+            <div class="skill-name"><span>HTML</span><span>75%</span></div>
+            <div class="progress"><div style="width:75%"></div></div>
+
+            <div class="skill-name"><span>CSS</span><span>65%</span></div>
+            <div class="progress"><div style="width:65%"></div></div>
+
+            <div class="skill-name"><span>JavaScript</span><span>55%</span></div>
+            <div class="progress"><div style="width:55%"></div></div>
+        </div>
+
+
+        <div class="card reveal">
+            <h3>Programming</h3>
+
+            <div class="skill-name"><span>C++</span><span>70%</span></div>
+            <div class="progress"><div style="width:70%"></div></div>
+
+            <div class="skill-name"><span>Python</span><span>55%</span></div>
+            <div class="progress"><div style="width:55%"></div></div>
+
+            <div class="skill-name"><span>Java</span><span>Learning</span></div>
+            <div class="progress"><div style="width:30%"></div></div>
+        </div>
+
+
+        <div class="card reveal">
+            <h3>Other Technical Skills</h3>
+
+            <div class="skill-name"><span>Networking</span><span>60%</span></div>
+            <div class="progress"><div style="width:60%"></div></div>
+
+            <div class="skill-name"><span>Database Management</span><span>50%</span></div>
+            <div class="progress"><div style="width:50%"></div></div>
+
+            <div class="skill-name"><span>Git & GitHub</span><span>Learning</span></div>
+            <div class="progress"><div style="width:40%"></div></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="section-title reveal">
+        <h2>My <span>Education</span></h2>
+        <p>My academic journey from primary school to university.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <span class="year">2020</span>
+
+            <h2>Primary Education</h2>
+
+            <h3>Kenya Certificate of Primary Education (KCPE)</h3>
+
+            <p>School: NYAGICHENCHE PRIMARY</p>
+
+            <p>
+                Completed primary education in 2020,
+                attaining 375 marks in KCPE.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span class="year">2021 - 2024</span>
+
+            <h2>Secondary Education</h2>
+
+            <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
+
+            <p>School: MOI HIGH SCHOOL GESUSU</p>
+
+            <p>
+                Successfully completed secondary education
+                in 2024 with an overall grade of B+.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span class="year">Current</span>
+
+            <h2>University Education</h2>
+
+            <h3>Bachelor of Science in Computer Science</h3>
+
+            <p>Institution: KIRINYAGA UNIVERSITY</p>
+
+            <p>
+                Currently pursuing computer science with interests
+                in programming, software engineering, networking,
+                databases and web development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="section-title reveal">
+        <h2>My <span>Experience</span></h2>
+        <p>Practical experience through projects and continuous learning.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <span class="year">Personal Project</span>
+
+            <h2>Student Management System</h2>
+
+            <h3>C++ Development</h3>
+
+            <ul>
+                <li>Designed a student record management application.</li>
+                <li>Applied object-oriented programming concepts.</li>
+                <li>Practised data storage and file handling.</li>
+                <li>Improved problem-solving and debugging skills.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span class="year">Personal Project</span>
+
+            <h2>Fashion Lovers Website</h2>
+
+            <h3>Frontend Development</h3>
+
+            <ul>
+                <li>Designed a modern fashion e-commerce interface.</li>
+                <li>Created responsive product layouts.</li>
+                <li>Worked with HTML, CSS and JavaScript.</li>
+                <li>Explored product management and payment integration.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <span class="year">Ongoing</span>
+
+            <h2>Professional Development</h2>
+
+            <h3>Computer Science</h3>
+
+            <ul>
+                <li>Learning programming and software development.</li>
+                <li>Practising computer networking.</li>
+                <li>Exploring database management systems.</li>
+                <li>Building practical technical projects.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title reveal">
+        <h2>My <span>Projects</span></h2>
+        <p>Some of the projects I have developed and explored.</p>
+    </div>
+
+    <div class="filters">
+
+        <button class="filter active" onclick="filterProjects('all',this)">
+            All
+        </button>
+
+        <button class="filter" onclick="filterProjects('web',this)">
+            Web
+        </button>
+
+        <button class="filter" onclick="filterProjects('software',this)">
+            Software
+        </button>
+
+        <button class="filter" onclick="filterProjects('design',this)">
+            Design
+        </button>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card project-card reveal" data-category="software">
+
+            <div class="project-image">C++</div>
+
+            <h3>Student Management System</h3>
+
+            <p>
+                A C++ application designed to manage student
+                information and records.
+            </p>
+
+            <div class="tags">
+                <span>C++</span>
+                <span>OOP</span>
+                <span>File Handling</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+            </div>
+
+        </div>
+
+
+        <div class="card project-card reveal" data-category="web">
+
+            <div class="project-image">FL</div>
+
+            <h3>Fashion Lovers</h3>
+
+            <p>
+                An e-commerce website concept for displaying
+                and managing fashion products.
+            </p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+            </div>
+
+        </div>
+
+
+        <div class="card project-card reveal" data-category="design">
+
+            <div class="project-image">CA</div>
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+                A responsive portfolio website showcasing
+                my skills, education and projects.
+            </p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title reveal">
+        <h2>Contact <span>Me</span></h2>
+        <p>Let's connect and create something meaningful.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info reveal">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                I am open to opportunities, collaborations,
+                internships and professional connections.
+            </p>
+
+            <p><strong>Email:</strong> collinsatuta7@gmail.com</p>
+
+            <p><strong>Location:</strong> Kenya</p>
+
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/" target="_blank">Visit GitHub</a>
+            </p>
+
+            <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://linkedin.com/" target="_blank">Visit LinkedIn</a>
+            </p>
+
+        </div>
+
+
+        <div class="contact-form reveal">
+
+            <h2>Send Me a Message</h2>
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Send Message
+                </button>
+
+            </form>
+
+            <p id="formMessage"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>COLLINS ATUTA</h3>
+
+    <p>Building ideas into useful digital experiences.</p>
+
+    <div class="socials">
+
+        <a href="https://github.com/" target="_blank">GitHub</a>
+
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+
+        <a href="https://x.com/" target="_blank">Twitter/X</a>
+
+        <a href="mailto:collinsatuta7@gmail.com">Email</a>
+
+    </div>
+
+    <p>© <span id="year"></span> Collins Atuta. All Rights Reserved.</p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// MOBILE NAVIGATION
+
+function toggleMenu() {
+
+    document.getElementById("navLinks").classList.toggle("show");
+
+}
+
+
+// CLOSE MOBILE MENU WHEN LINK IS CLICKED
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks").classList.remove("show");
+
+    });
+
+});
+
+
+// PROJECT FILTERING
+
+function filterProjects(category, button) {
+
+    const projects = document.querySelectorAll(".project-card");
+
+    const buttons = document.querySelectorAll(".filter");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    projects.forEach(project => {
+
+        const projectCategory = project.dataset.category;
+
+        if (category === "all" || category === projectCategory) {
+
+            project.classList.remove("hide");
+
+        } else {
+
+            project.classList.add("hide");
+
+        }
+
+    });
+
+}
+
+
+// CONTACT FORM
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    const email = document.getElementById("email").value;
+
+    const subject = document.getElementById("subject").value;
+
+    const message = document.getElementById("message").value;
+
+    const recipient = "your.email@example.com";
+
+    const body =
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage: " + message;
+
+    const mailto =
+        "mailto:" + recipient +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    document.getElementById("formMessage").textContent =
+        "Opening your email application...";
+
+    window.location.href = mailto;
+
+});
+
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// SCROLL ANIMATIONS
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+
+    observer.observe(element);
+
+});
+
+</script>
+
+</body>
+</html>
